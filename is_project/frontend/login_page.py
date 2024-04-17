@@ -1,5 +1,5 @@
 import streamlit as st
-
+import is_project.backend.db_conn as conn
 
 
 
@@ -13,7 +13,7 @@ def main():
 
     # Login button
     if st.button("Login"):
-        if authenticate(username, password):
+        if conn.authenticate(username, password):
             st.success("Logged in successfully!")
             # You can redirect the user to another page here
         else:
